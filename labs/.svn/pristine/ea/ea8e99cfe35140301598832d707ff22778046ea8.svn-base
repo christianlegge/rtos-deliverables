@@ -1,0 +1,497 @@
+BASIC TOOL
+1. Create a new pthread using pthread_create and run ui_run() on it. then use pthread_join() to wait for ui_run to complete.
+
+2
+   ----
+    beginning of main()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 96
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 4
+    nivcsw: 1
+
+    ----
+    after ui_init()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 99
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 4
+    nivcsw: 1
+
+    Press Enter to exit...
+    ----------------------
+    after starting UI thread
+    ----------------------
+    rusage information
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 103
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 6
+    nivcsw: 1
+
+
+
+    ----
+    after UI thread complete
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 104
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 7
+    nivcsw: 1
+
+
+3.
+    ----
+    beginning of main()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 95
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 3
+    nivcsw: 1
+
+    ----
+    after ui_init()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 99
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 3
+    nivcsw: 1
+
+    Press Enter to exit...
+    ----------------------
+    after starting UI thread
+    ----------------------
+    rusage information
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 103
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 5
+    nivcsw: 1
+
+
+
+    ----
+    after UI thread complete
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 104
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 6
+    nivcsw: 1
+
+    
+
+==========================================================
+    ----
+    beginning of main()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 95
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 7
+    nivcsw: 1
+
+    ----
+    after ui_init()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 99
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 7
+    nivcsw: 1
+
+    Press Enter to exit...
+    ----------------------
+    after starting UI thread
+    ----------------------
+    rusage information
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 103
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 9
+    nivcsw: 1
+
+
+
+    ----
+    after UI thread complete
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 104
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 10
+    nivcsw: 1
+
+
+=============================================================
+
+    ----
+    beginning of main()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 94
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 7
+    nivcsw: 1
+
+    ----
+    after ui_init()
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 98
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 7
+    nivcsw: 1
+
+    Press Enter to exit...
+    ----------------------
+    after starting UI thread
+    ----------------------
+    rusage information
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 102
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 9
+    nivcsw: 1
+
+
+
+    ----
+    after UI thread complete
+    ----
+    rusage:
+    utime: 0
+    stime: 0
+    maxrss: 1796
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 103
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 10
+    nivcsw: 1
+
+time is being displayed as 0 since its recorded in microseconds and the execution is less than 1 so it is appearing as 0
+
+GUI
+1.
+    utime: 72000
+    stime: 24000
+    maxrss: 22356
+    ixrss: 0
+    idrss: 0
+    isrss: 0
+    minflt: 1429
+    majflt: 0
+    nswap: 0
+    inblock: 0
+    oublock: 0
+    msgsnd: 0
+    msgrcv: 0
+    nsignals: 0
+    nvcsw: 331
+    nivcsw: 2
+
+    opening and closing the exit dialog increases the times, the nvcsw (context switches), and sometimes increases the number of faults. Opening a new dialog adds around 30000 microseconds
+
+3.
+    Big Grep:
+        utime: 700000
+        stime: 156000
+        maxrss: 8416
+        ixrss: 0
+        idrss: 0
+        isrss: 0
+        minflt: 437
+        majflt: 0
+        nswap: 0
+        inblock: 0
+        oublock: 0
+        msgsnd: 0
+        msgrcv: 0
+        nsignals: 0
+        nvcsw: 33
+        nivcsw: 3
+
+    Small Grep:
+        utime: 0
+        stime: 4000
+        maxrss: 8144
+        ixrss: 0
+        idrss: 0
+        isrss: 0
+        minflt: 421
+        majflt: 0
+        nswap: 0
+        inblock: 0
+        oublock: 0
+        msgsnd: 0
+        msgrcv: 0
+        nsignals: 0
+        nvcsw: 4
+        nivcsw: 1
+
+    CC:
+        utime: 36000
+        stime: 16000
+        maxrss: 23232
+        ixrss: 0
+        idrss: 0
+        isrss: 0
+        minflt: 5816
+        majflt: 0
+        nswap: 0
+        inblock: 8
+        oublock: 56
+        msgsnd: 0
+        msgrcv: 0
+        nsignals: 0
+        nvcsw: 30
+        nivcsw: 8
+
+Memory Pressure:
+1)
+    No swap
+    8104648 Kb of Memory
+    4551100 Kb of Free Memory
+
+2)
+    Command being timed: "gdb ./lab"
+	User time (seconds): 0.62
+	System time (seconds): 0.24
+	Percent of CPU this job got: 2%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:40.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 58788
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 198
+	Minor (reclaiming a frame) page faults: 13431
+	Voluntary context switches: 2404
+	Involuntary context switches: 35
+	Swaps: 0
+	File system inputs: 100368
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+3)
+    The os allowed us to keep ballooning until there was around 150 MB of memory left before malloc failed
+4)
+   	Command being timed: "gdb ./lab"
+	User time (seconds): 1.48
+	System time (seconds): 2.48
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:04.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 44120
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 30800
+	Minor (reclaiming a frame) page faults: 26460
+	Voluntary context switches: 35935
+	Involuntary context switches: 340
+	Swaps: 0
+	File system inputs: 5860584
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+    theres much more page faults due to the lack of available memory.

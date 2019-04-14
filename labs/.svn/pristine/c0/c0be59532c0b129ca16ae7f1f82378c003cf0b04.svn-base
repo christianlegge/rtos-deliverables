@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,librusage.so -o librusage.so CMakeFiles/rusage.dir/rusage.c.o 

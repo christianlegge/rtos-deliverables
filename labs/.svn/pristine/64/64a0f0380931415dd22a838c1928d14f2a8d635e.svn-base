@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/main.c
+sys/types.h
+-
+sys/time.h
+-
+sys/resource.h
+-
+pthread.h
+-
+stdlib.h
+-
+err.h
+-
+stdbool.h
+-
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+ui.h
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/ui.h
+rusage.h
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/rusage.h
+
+include/rusage.h
+stdbool.h
+-
+
+include/ui.h
+stdbool.h
+-
+

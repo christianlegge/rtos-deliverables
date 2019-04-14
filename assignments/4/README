@@ -1,0 +1,21 @@
+Compile server.c and client.c with -pthread:
+
+$ gcc -pthread server.c -o server
+$ gcc -pthread client.c -o client
+
+Neither program takes command line arguments.
+
+Start server and wait for the "Waiting for connection from client" message. Then run client.
+Client will ask for a username and, once a valid (alphanumeric + underscores) one is provided,
+attempt to connect to the server. If this is achieved, the client will join the #general room.
+
+Once connected, type and press Enter to send messages to the room. There are a few commands that can be run:
+
+- /hello: send the hello RPC
+- /create <room>: creates a room 
+- /list: lists available rooms
+- /join <room>: joins a room (must be created first)
+- /users: lists users in current room 
+
+To send a message that begins with a slash, type two slashes (For example, to answer the question
+"What do I type to list users?" type "//list" and send).

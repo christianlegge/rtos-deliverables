@@ -1,0 +1,37 @@
+PRELAB
+NETWORK BYTE ORDER
+1.
+	when a multi-octet quantity is transmitted the most significant octet is transmitted first
+2.
+	53	00 35	35 00
+	67	00 43	43 00
+	68	00 44	44 00
+	80	00 50	50 00
+	8080	1F 90	90 1F
+
+NETWORK PROTOCOL
+1.
+	 ciaddr  4       client IP address;
+                         filled in by client in bootrequest if known.
+
+         yiaddr  4       'your' (client) IP address;
+                         filled by server if client doesn't
+                         know its own address (ciaddr was 0).
+2.
+	This means that the pc wasnt able to find a routable address available
+3.
+	header 		16*6	 12 Bytes
+	question	16*3	 6 Bytes
+			  	 18 Bytes
+4.
+	Ports from 0-1023 are reserved for privileged users.
+
+PACKET CAPTURE
+1.
+	-n makes the command not convert addresses to names
+2.
+	-w makes the command write the packets to a file instead of the screen
+3.	
+	-i ant captures packets from all interfaces. This precludes capturing in promiscuous mode. 		Promiscuous mode manipulates the hardware interface directly to accept any and all messages.
+	
+	

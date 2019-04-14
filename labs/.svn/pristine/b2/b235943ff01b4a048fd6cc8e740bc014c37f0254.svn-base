@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/cmdline/ui.c
+stdio.h
+-
+ui.h
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/cmdline/ui.h
+
+include/ui.h
+stdbool.h
+-
+

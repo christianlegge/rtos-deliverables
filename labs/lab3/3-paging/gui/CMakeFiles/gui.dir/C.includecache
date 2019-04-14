@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/gui/gtk-ui.c
+assert.h
+-
+stdlib.h
+-
+string.h
+-
+gtk/gtk.h
+-
+ui.h
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/gui/ui.h
+rusage.h
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/gui/rusage.h
+
+include/rusage.h
+stdbool.h
+-
+
+include/ui.h
+stdbool.h
+-
+

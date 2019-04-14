@@ -1,0 +1,32 @@
+ENGI 8894 - Real Time Operating Systems
+Prelab 1
+Joshua Bennett - 201428653
+Jan 14, 2019
+
+1.
+        a. The "man x" command provides you a manual for the command x, an explanation of how to use the command x
+
+        b. Section 2 is system calls, which allows the command to interact with the linux kernel. System calls are generally not invoked directly, but have a c library wrapper function to perform the system call
+        Section 3 is library functions, the wrapper used in section 2 to perform the system call.
+        
+        c. write(x) writes up to x bytes from the buffer pointed buf to the file referred to by the file descriptor fd.
+        so write(1) will write up to 1 byte from the buffer, whereas write(2) writes up to 2 bytes from the buffer.
+2.
+        The strace runs a command until it exits and records all system calls that occur
+
+3.
+        a. 7
+        
+        b. /usr/include/x86_64-linux-gnu/asm/unistd_64.h is the name of the path of the linux gnu kernel name. Unam eis usful for findind system information
+        
+        c. 
+        read - 0
+        write - 1
+        open - 2
+        close - 3
+
+4.
+                                                        System Call #           System call args
+        syscall                                    rax                               rdi, rsi, r10, r8, r9
+        sysenter                                eax                              ebx, ecx, edx, esi, edi, 0(%ebp)    
+        Software interrupt            eax                              ebx, ecx, edx, esi, edi, ebp

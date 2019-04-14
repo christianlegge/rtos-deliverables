@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libcmdlineui.so -o libcmdlineui.so CMakeFiles/cmdlineui.dir/ui.c.o 

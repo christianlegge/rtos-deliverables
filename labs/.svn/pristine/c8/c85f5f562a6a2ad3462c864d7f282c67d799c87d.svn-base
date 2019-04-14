@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/rusage.c
+time.h
+-
+sys/resource.h
+-
+stdlib.h
+-
+stdio.h
+-
+

@@ -1,0 +1,100 @@
+INITIAL SETUP
+1.	
+		enx3c18a041c386 Link encap:Ethernet  HWaddr 3c:18:a0:41:c3:86  
+          inet addr:192.168.88.100  Bcast:192.168.88.255  Mask:255.255.255.0
+          inet6 addr: fe80::a469:105b:d609:f88b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1196 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:153 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:97246 (97.2 KB)  TX bytes:15384 (15.3 KB)
+
+	ibft0     Link encap:Ethernet  HWaddr 44:37:e6:57:cc:59  
+          inet addr:134.153.31.215  Bcast:134.153.31.255  Mask:255.255.248.0
+          inet6 addr: fe80::4637:e6ff:fe57:cc59/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1322738 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:667668 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1545197577 (1.5 GB)  TX bytes:404609596 (404.6 MB)
+          Interrupt:20 Memory:fb100000-fb120000 
+
+	lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:200 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:200 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:12916 (12.9 KB)  TX bytes:12916 (12.9 KB)
+
+	
+	The first interface is connecting the machine to the DE1 board, we know this because the 		ip adderss 192.168.88.100 and mask 255.255.255.0, which signifies a local network
+		
+	the second interface is allowing us to connect to the internet, the 134.153.31.215 and the 		mask 255.255.248.0 signifies a internet connection
+	
+	the third interface, 127.0.0.1 and mask 255.0.0.0 is local to this machine.
+2.
+	The address to oyr internet gateway server is 134.153.31.254, we know this by referring to 		the routing table
+	
+	route -n
+	Kernel IP routing table
+	Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+	0.0.0.0         134.153.31.254  0.0.0.0         UG    100    0        0 ibft0
+	134.153.24.0    0.0.0.0         255.255.248.0   U     0      0        0 ibft0
+	169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 ibft0
+	192.168.88.0    0.0.0.0         255.255.255.0   U     100    0        0 enx3c18a041c386
+3.
+	DE1		rtt min/avg/max/mdev = 1.289/1.354/1.447/0.057 ms
+	Google		rtt min/avg/max/mdev = 62.216/62.272/62.339/0.041 ms
+	Local		rtt min/avg/max/mdev = 0.022/0.028/0.043/0.007 ms
+	Memorial	rtt min/avg/max/mdev = 0.248/0.273/0.295/0.022 ms
+	Canada		rtt min/avg/max/mdev = 0.294/0.377/0.460/0.059 ms
+
+	+---------------------------------------------------------------------------------------------------+
+|                   x                                                                               |
+|                   x                                                                               |
+|                   x x                                                                            x|
+||__________________M_______________A__________________________________|                            |
++---------------------------------------------------------------------------------------------------+
+
+4.
+	the lab PC was added as the default gateway using the command "route add default gw". To 	confirm this was added we referred to "ip route" command which outputted "default via 		192.168.88.100 dev eth0", our address as the default.
+5.
+	tcpdump is not a command that we can run on the board
+
+PROTOCOL INTERACTION
+1.
+	LabPC		rtt min/avg/max/mdev = 0.976/1.024/1.092/0.056 ms
+	Google		
+	Local		rtt min/avg/max/mdev = 0.063/0.081/0.122/0.024 ms
+	Memorial	
+	Canada		
+	
+	
+2.
+	when dig is called with mun.ca we received a much smaller message(size: 24) because it did not redirect us anywhere, whereas when we called it with www.mun.ca it redirected us to vhost.ucs.mun.ca and we received a larger message(size: 68)
+	
+	when we used gov.nl.ca and www.gov.nl.ca a similar thing that happened with mun occured again, www.gov.nl.ca returned a larger message due to a redirect to cms.gov.nl.ca. Another thing to note is that the query time for gov.nl.ca was much longer (36 vs 194 ms) than the query time to www.gov.nl.ca. This is most likely because the www.gov.nl.ca is redirected to a faster DNS than the gov.nl.ca
+
+	the last dig command was used with facebook.com, the query time was 0 ms, most likely because a giant company like facebook is going to have very fast response times.
+
+3. 
+	user: josh
+	password: bennett
+	user: christian
+	password: legge
+	user: tony
+	password: tony
+
+	it wasnt any of these.
+
+PROTOCOL DISSECTION
+	We were not able to run the tcpdump command on the DE1 board, as it seemed to not be installed.
+	
+	
+	
+
+	
+		
+ 

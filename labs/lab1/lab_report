@@ -1,0 +1,46 @@
+ENGI 8894 - Real-Time Operating Systems
+Lab 1
+Joshua Bennett - 201428653
+Christian Legge - 201422748
+Jan 14, 2019
+
+
+1. 
+	a.
+		The differences between these 2 invocations are the return values of the system calls, specifically the calls which return a memory location, as these locations will be different for different echo calls
+
+	b. 
+		The system calls that return memory locations are again different, but since  different commands are called, some of the system calls are different as well. For example, the echo command calls "write(1, "hello\n")" where as the cat calls an open, fstat, fadvise, mmap, etc.
+2.
+	a.
+		When the assembly code is disassembled, the do_stuff section is displayed as a list of address offsets, instructions, and registers. 
+		The message section attempts to convert the ascii "Hello world\n" string into a list of address offsets, instructions, and registers. It uses the hex values of the string as the address offsets and attempts to get instructions from those.
+	b.
+		When the syscalls file is disassembled the initial mov instruction is at a different address since it is not the first instruction like it is in the stuff file. The do_stuff also has 2 additional instructions nopw and xchg
+
+		When nm is run on these files, in syscalls, the message isnt directly after do_stuff, this is why the 2 additional instructions are present in the disassembled files
+	c.
+		Again the memroy allocation addresses are different, after the memroy allocation is complete, the differences come from the different instructions that echo and syscall are doing. echo writes "hello" to the screen and closes whereas syscall writes to the screen, gets clocktime, writes to the screen again and then exits.
+	d.
+		the system call number in strace, 6295624 is the syscall number from disassembly(0x601048) converted to decimals.
+
+		rax(system call number):0x0000000000601048
+		rdi:0x0000000000000002
+		rsi:0x00007fffffffe480
+		r10:0x0000000000000672
+		r9:0x0000000000000014
+		r8:0x0000000000602000
+3.
+	a. 	
+		we put $4 in %eax, which told the system to call write, $1 in ebx to tell it to write to stdout, $message into ecx, to store the message string, and $20 in edx to store the message length.
+	
+	b.	
+		in this section we wrote the parameters from a directly into the syscall registers and then called syscall at then end.
+
+	c.
+		This method using syscall introduces a way to avoid having to use an interupt.
+	
+	d.
+		This last step involved 4 seperate syscalls, first we opened /etc/fstab using the open syscall, then we read the first 4096B and stored it in a buffer, then wrote the contents of that buffer to stdout, and finally closed /etc/fstab
+		
+

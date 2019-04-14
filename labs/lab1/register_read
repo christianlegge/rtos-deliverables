@@ -1,0 +1,27 @@
+(lldb) register read
+General Purpose Registers:
+       rax = 0x0000000000601048  message
+       rbx = 0x0000000000000000
+       rcx = 0x00007ffff7ffab39  [vdso]`clock_gettime + 297
+       rdx = 0x00007ffff7dd3780  libc.so.6..bss + 4192
+       rdi = 0x0000000000000002
+       rsi = 0x00007fffffffe480
+       rbp = 0x00007fffffffe4a0
+       rsp = 0x00007fffffffe458
+        r8 = 0x0000000000602000
+        r9 = 0x0000000000000014
+       r10 = 0x0000000000000672
+       r11 = 0x0000000000000297
+       r12 = 0x00000000004004e0  syscalls`_start
+       r13 = 0x00007fffffffe580
+       r14 = 0x0000000000000000
+       r15 = 0x0000000000000000
+       rip = 0x0000000000400691  syscalls`do_stuff + 5
+    rflags = 0x0000000000000246
+        cs = 0x0000000000000033
+        fs = 0x0000000000000000
+        gs = 0x0000000000000000
+        ss = 0x000000000000002b
+        ds = 0x0000000000000000
+        es = 0x0000000000000000
+

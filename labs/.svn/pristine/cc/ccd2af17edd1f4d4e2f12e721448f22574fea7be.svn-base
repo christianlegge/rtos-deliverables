@@ -1,0 +1,59 @@
+Altera SoC boot overview
+
+1. An HPS is a hard processor system.
+2. HPS boot process:
+	Reset (CPU exits from reset, e.g. powers on)
+	Boot ROM (Selects boot source, sets up clock manager)
+	Preloader (User defined, generally initializes SDRAM - without this, boot software may not fit on available 60kB on-chip RAM)
+	Boot Loader (User defined, loads OS, passes software control to OS)
+3. A warm boot is a boot loaded from the on-chip RAM, and a cold boot is a boot loaded from another source (FPGA or flash memory).
+4. Preloader offset 0x40 must contain a validation word (0x31305341).
+5. Preloader images can be up to 60 kB in size due to the 64 kB size of the on-chip RAM with 4 kB reserved for boot ROM data and the stack.
+6. The boot ROM reads the preloader image header to find the entry point address, which it jumps to to start running the preloader image.
+
+Disk partitions
+
+1. FAT12 - 0x01
+	FAT16 - 0x04
+	FAT16B - 0x06
+	exFAT - 0x07
+	Logical sectored FAT12/FAT16 (Commodore) - 0x08
+	FAT32 (CHS) - 0x0B
+	FAT32 (LBA) - 0x0C
+	FAT16B (LBA) - 0x0E
+	Logical sectored FAT12/FAT16 (Leading Edge) - 0x11
+	Hidden FAT12 (IBM) - 0x11
+	Bootable FAT - 0x12
+	Logical sectored FAT12/FAT16 (AST) - 0x14
+	Hidden FAT16 (IBM) - 0x14
+	Hidden FAT16B (IBM) - 0x16
+	Hidden exFAT (IBM) - 0x17
+	Hidden FAT32 (IBM) - 0x1B
+	Hidden FAT32 (LBA) (IBM) - 0x1C
+	
+2. CHS = cylinder-head-sector; coordinates correspond to physical locations on a hard disk. Used because early hard drives did not have an embedded disk controller so the OS could not abstract addresses to a linear list of 0 to (blocks - 1). Came before LBA.
+	LBA = logical block addressing; linear list of blocks. Actual physical locations of data resolved by disk hardware. Used more often today because it is simpler and allows better adaptability (all hard drives compatible).
+	
+3. Modern Linux filesystems use the ext4 filesystem. The partition ID is 0x83 (131 in decimal).
+
+4. FreeBSD slices use the BSD slice filesystem. The partition ID is 0xA5 (165 in decimal).
+
+5. Partition id 0xA2 is used for the Altera Cyclone V HPS ARM preloader.
+
+Disk and file inspection tools
+
+1. 
+	1. dd(1) copies one file to another, with several conversion options built in.
+	2. dd bs=512 count=64 if=srcfile of=dstfile
+2.
+	1. The string ".ELF" (0x00), the string "Congratulations on completing ENGI %d!" (0x50), "GCC: (crosstool-NG linaro-1.13.1-4.8-2014.04 - Linaro GCC 4.8-2014.04)" (0x79) Possibly the GCC version that compiled it?
+	2. 
+		1. 8894.o conforms to the current ELF version as the bytes of the e_version entry are 01 00 00 00 for 1.
+		2. This is a 32-bit object file as the word size is 32 bits.
+		3. This is compiled for a little-endian machine as the numerical values in the header are stored with little-endianness.
+		4. This is a relocatable object file as shown by the e_type value at 0x10, 01 00 = 1 for relocatable.
+	3. The "Congratulations" string seems to have the format of a printf call, so this probably prints "Congratulations on completing ENGI xxxx" where xxxx is a course number, possibly taken from user input.
+3.
+	1. objdump -s displays the full contents of the requested sections, by default displaying the contents of all non-empty sections.
+	2. objdump -d displays the asembler mnemonics for the machine instructions in the object file. Only disassembles sections which should contain instructions.
+	3. The value 8894 (hex 0x22be) is stored in r3 as seen in offset 0x28.

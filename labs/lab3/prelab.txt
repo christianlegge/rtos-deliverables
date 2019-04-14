@@ -1,0 +1,10 @@
+ENGI 8894 Prelab 3 
+
+1. Major faults are page faults (hard page faults) that required I/O activity, minor faults are page reclaims (soft page faults) without I/O activity 
+http://man7.org/linux/man-pages/man2/getrusage.2.html 
+
+2. The Linux version of getrusage has several fields that are unmaintained and unused, for compatibility with other systems, and because they may one day be supported on Linux. These fields are ru_ixrss, ru_idrss, ru_isrss, ru_nswap, ru_msgsnd, ru_msgrcv, and  ru_nsignals. These fields are used in the FreeBSD implementation of the call.
+http://man7.org/linux/man-pages/man2/getrusage.2.html
+https://www.freebsd.org/cgi/man.cgi?query=getrusage&apropos=0&sektion=2&format=html
+
+4. An address space is the range of memory addresses available to a single program, which map to the physical memory of the system

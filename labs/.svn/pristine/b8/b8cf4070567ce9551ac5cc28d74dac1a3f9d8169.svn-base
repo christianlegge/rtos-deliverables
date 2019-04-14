@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/lab.dir/main.c.o  -o lab -rdynamic -lpthread cmdline/libcmdlineui.so librusage.so -Wl,-rpath,/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging/cmdline:/users/labnet/st7/jtb240/8894-Labs/1/lab3/3-paging 
